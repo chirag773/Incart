@@ -1,0 +1,102 @@
+<% include partials/header %>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="http://cdn.mintees.com.s3.amazonaws.com/files/tees/845/368754/800x400-gdwb-mintees.jpg" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Los Angeles</h3>
+          <p>LA is always so much fun!</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="http://cdn.mintees.com.s3.amazonaws.com/files/tees/845/368754/800x400-gdwb-mintees.jpg" alt="Chicago" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Chicago</h3>
+          <p>Thank you, Chicago!</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="http://cdn.mintees.com.s3.amazonaws.com/files/tees/845/368754/800x400-gdwb-mintees.jpg" alt="New York" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>New York</h3>
+          <p>We love the Big Apple!</p>
+        </div>
+      </div>
+  
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+<a class="btn btn-primary" href="/products">all products</a>
+<a class="btn btn-primary" href="/products/newProduct">Add New Product</a>
+<!-- <div class="row" style="display:flex; flex-wrap:wrap;">
+      <div class=" col-lg-3 col-md-3 col-sm-6">
+        <div class="thumbnail">
+          <img src="data:image/jpeg;base64,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"> 
+           <div class="caption">
+        </div>
+          <div class="row">
+        <div style="text-align:center;font-family: 'Nunito', sans-serif;font-size:13px;">
+      <div id="AddToCart" style=" background-color:#bcbcbc;
+                                 transition: all 180ms ease-in;
+                                 margin-top:10px;margin-bottom:10px;
+                                 border-right:solid 20px white;
+                                 border-left:solid 20px white;
+                                 height:40px;"
+                                class="col col-lg-6 col-xs-12"> 
+   <div style="margin-top:10px;">
+     <form action="#" method="post">
+       <button style="background-color:#bcbcbc;color:black;border:solid 1px #bcbcbc ;">
+          <i id="Add2cartIcon" style="font-size:17px" class="fa fa-cart-plus" aria-hidden="true">
+     </i>
+         Add To Cart</button>
+     </form>
+     
+      </div></div>
+      <div id="buynow" class="col col-lg-6 col-xs-12">
+        <div style="margin-top:10px;"><a style="background-color:black;
+                                                color:white;"
+                          href="/buy">Buy Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+        </div>
+          </div>
+    </div>
+        </div>
+    </div>
+    </div>
+  </div>
+   -->
+  
+  
+  <style>
+    #buynow{
+                  background-color:black;
+                  margin-top:10px;margin-bottom:10px;
+                  border-right:solid 20px white;
+                  border-left:solid 20px white;
+                  height:40px;
+    }
+  
+  
+  </style>

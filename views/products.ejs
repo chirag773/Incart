@@ -1,0 +1,67 @@
+<% include partials/header %>
+
+
+<div>    
+  <div class="row">
+    <%products.forEach(function(product){%>
+  <div style="border-right:solid 1px #bcbcbc"class="col-lg-4 col-sm-4 col-xs-6"> 
+   <p style="text-align:center;
+              
+             font-family: 'Raleway', sans-serif;
+             font-size:20px;"><%= product.ProductName %></p>
+ <div><img src="<%= product.ProductImage %>" class="img-responsive" style="width:100%" alt="Image"></div><br>
+    <p style="text-align:center;
+              font-family: 'Nunito', sans-serif;
+             font-size:15px;">Starting at<em>₹ </em><%= product.ProductPrice %>/-</p>
+    
+    <div class="row">
+        <div style="text-align:center;font-family: 'Nunito', sans-serif;font-size:13px;">
+      <div id="AddToCart" style=" background-color:#668cff;
+                                 transition: all 180ms ease-in;
+                                 margin-top:10px;margin-bottom:10px;
+                                 border-right:solid 20px white;
+                                 border-left:solid 20px white;
+                                 height:40px;"
+                   class="col col-lg-6 col-xs-12"> 
+   <div style="margin-top:10px;">
+     <form action="/products/<%=product._id%>" method="post">
+       <button style="background-color:#668cff;color:black;border:solid 1px #bcbcbc ;">
+          <i id="Add2cartIcon" style="font-size:17px" class="fa fa-cart-plus" aria-hidden="true">
+     </i>
+         Add To Cart</button>
+     </form>
+     
+      </div></div>
+      <div style="background-color:black;
+                  margin-top:10px;margin-bottom:10px;
+                  border-right:solid 20px white;
+                  border-left:solid 20px white;
+                  height:40px;" class="col col-lg-6 col-xs-12">
+    <div style="margin-top:10px;"><a style="background-color:black;
+                     color:white;
+                   " href="/products/<%= product._id %>">Buy Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></div></div>
+    </div>
+    
+ 
+    </div>
+    
+ </div>
+    <%})%>
+ 
+    </div>
+  </div>
+</div><br>
+
+<style>
+   #name,#price{
+  text-align:center;
+}
+  .btn{
+    background:black;
+    color:white;
+/*     text-align:center; */
+  }
+
+</style>
+ 
+ 

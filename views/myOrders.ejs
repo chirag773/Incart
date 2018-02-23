@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<% user.Orders.forEach(function(Order){ %>
+
+<h1><%=Order.ProductName%></h1>
+<h1><%=Order.id%></h1>
+<h1><%=Order.ProductSize%></h1>
+<h1><%=Order.ShippingAddress%></h1>
+<h1><%=Order.ProductPrice%></h1>
+<h1><%=Order.AreaPincode%></h1>
+<h1><%=Order.UserFullName%></h1>
+<h1><%=Order.UserPhoneNo%></h1>
+
+<p><%=Order.ProductQuantity%></p>
+
+<%})%>
+

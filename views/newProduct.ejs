@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 col-xs-12">
+      <h1>Add New Products</h1>
+    </div>
+    <div class="col-lg-6 col-sm-12 col-xs-12">
+    <form action="/products" method="POST">
+      <div class="form-group">
+        <label for="productname">Name Of Product</label>
+        <input type="name" class="form-control" id="productname" placeholder="Product Name" name="ProductName">
+      </div>
+      <div class="form-group">
+        <label for="productprice">price of product</label>
+        <input type="text" class="form-control" id="productprice" placeholder="Product Price" name="ProductPrice">
+      </div>
+      <div class="form-group">
+        <label for="productimage">product image</label>
+        <input type="text" class="form-control" id="productimage" placeholder="Product Image" name="ProductImage">
+      </div>
+        
+       <div class="form-group">
+      <label for="exampleFormControlTextarea1">description about product</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Product Description" name="ProductDescription"></textarea>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success btn-block">Add New Product</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+<style>
+ 
+</style>
