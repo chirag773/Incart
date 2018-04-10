@@ -142,7 +142,7 @@ app.post("/products/:id/myOrders",function(req,res){
       console.log(err);
     } else {
        
-      User.findById(req.user._id,function(err,users){
+      User.findById(req.user.id,function(err,users){
         if (err) {
           console.log(err);
         } else {
@@ -230,72 +230,27 @@ app.post("/products/:id/myOrders",function(req,res){
 
 
 
+///////////////////delete routes////////////////////////////////////
 
-// app.post("/products/:id/myOrders",function(req,res){
-//   var ProductName   = req.body.ProductName;
-//    var ProductPrice = req.body.ProductPrice;
-//   var ProductImage  = req.body.ProductImage;
-//   var ProductSize   = req.body.ProductSize;
-//   var AreaPincode   = req.body.AreaPincode;
-//   var ShippingAddress = req.body.ShippingAddress;
-//   var UserFullName    = req.body.UserFullName;
-//   var UserPhoneNo      = req.body.UserPhoneNo;
-//   var BuyedByUser      = req.body.BuyedByUser;
-  
-//   var newProduct = {ProductName: ProductName, ProductPrice: ProductPrice, ProductImage: ProductImage, ProductDescription: ProductDescription}
-//   Product.create(newProduct,function(err,newlyProduct){
-//     if(err){
-//       console.log(err)
-//     }else{
-//       res.redirect("products")
-//     }
-//   })
-//   });
+app.delete("/myOrders/:id",function(req,res){
+  Order.findByIdAndRemove(req.params.id, function(err){
+     if(err){
+    console.log(err)
+} else{
+  res.redirect("/myOrders");
+  }
+   });
+});
 
-
-// app.post("/campgrounds/:id/comments", isLoggedIn ,function(req,res){
-//    Order.findById(req.params.id,function(err,campground){
-//     if(err){
-//       console.log(err)
-//     } else{
-//       Comment.create(req.body.comment,function(err,comment){
-//         if(err){
-//           console.log(err)
-//         } else{
-//           comment.author.id = req.user._id;
-//           comment.author.username = req.user.username;
-//           comment.save();
-//           campground.comments.push(comment);
-//           campground.save();
-//           res.redirect("/campgrounds/" + campground._id);
-//         }
-//       });
-       
-//     }
-//   });
-// });
-
-
-
-
-// app.post("/products/:id/buy",function(req,res){
-//   var productQuantity = req.body.ProductQuantity;
-//   var productSize     = req.body.ProductSize;
-//   var myOrders  = {productQuantity: productQuantity, productSize: productSize}
-//   User.Orders.create(myOrders,function(err,newlyOrder){
-//     if(err){
-//       console.log(err)
-//     }else{
-//       res.redirect("/products/:id/buy")
-//     }
-//   })
-//   });
-
-
-  
-
-
-
+app.get("/order/:id",function(req,res){
+  Order.findById(req.params.id,function(err,order){
+    if(err){
+      console.log(err)
+    }else{
+      res.redirect("/order/"+ req.params.id)
+    }
+  })
+});
 
 
 

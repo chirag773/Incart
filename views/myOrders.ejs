@@ -1,17 +1,123 @@
 <% include partials/header %>
 
-<% user.Orders.forEach(function(Order){ %>
 
-<h1><%=Order.ProductName%></h1>
-<h1><%=Order.id%></h1>
-<h1><%=Order.ProductSize%></h1>
-<h1><%=Order.ShippingAddress%></h1>
-<h1><%=Order.ProductPrice%></h1>
-<h1><%=Order.AreaPincode%></h1>
-<h1><%=Order.UserFullName%></h1>
-<h1><%=Order.UserPhoneNo%></h1>
+<div style="height:100px;background-color:black;text-align:center" class="row">
+  <div class="col col-lg-12 col-sm-12 col-xs-12">
+    <p style=" margin-top:25px;"><span style="font-family: 'Nunito', sans-serif;
+                    font-size:25px;
+                    color:white;
+                    "><i style=' font-size:35px;' class="fa fa-truck" aria-hidden="true"></i> My Orders</span></p>
 
-<p><%=Order.ProductQuantity%></p>
-
+    
+    
+    
+    <div style="margin-top:40px;">
+      <%user.Orders.forEach(function(order){%>
+   <div class="container">
+     <div class="row">
+       <div style="border-bottom:solid 1px #bcbcbc;margin-top:10px;" class="col col-lg-12 col-sm-12 col-xs-12">
+         
+         
+  <div  class="row">
+     <div class="col col-lg-0 col-sm-0 col-xs-1"> </div>
+    
+    
+    <div style="height:280px;border:solid 1px white;text-align:center" class="col col-lg-3 col-sm-10 col-xs-10">
+      
+         <img src="<%=order.ProductImage%>" 
+              style="height:100%;width:100%;" alt="">
+    </div>
+ 
+    
+    <div class="col col-lg-0 col-sm-0 col-xs-1"> </div>
+    
+    <div class="col col-lg-3 col-sm-12 col-xs-12">
+      <p><span style=" font-family: 'Raleway', sans-serif;
+                    font-size:25px;"><%=order.ProductName%>
+        </span> X <span style="background-color:black;font-family: 'Nunito', sans-serif;
+                              color:white;padding:5px;"><%=order.ProductQuantity%></span> <br>
+        <span style=" font-family: 'Nunito', sans-serif;
+                     font-size:35px;"><%=order.ProductPrice%></span><br>
+        <span style="font-family: 'Nunito', sans-serif; font-size:15px;"><strong>Order ID :</strong></span> 
+         <span style=" 
+                     font-size:12px;"><%=order.id%></span><br>
+        
+        <p><strong>Name:-</strong> <%=order.UserFullName%></p>
+      <p><strong>Address:- </strong><%=order.ShippingAddress%></p>
+       <p><strong>Area Pincode:-</strong> <%=order.AreaPincode%></p> 
+      <p><Strong>Phone No:-</Strong> <%=order.UserPhoneNo%></p>
+      </p>
+    </div>
+    
+    
+       <div class="col col-lg-3 col-sm-12 col-xs-12">
+      <p><span style="font-family: 'Raleway', sans-serif;font-size:15px;">Order placed On :</span><br>
+        <span style="font-family: 'Nunito', sans-serif;
+                    font-size:15px;"><%=order.OrderPlacedOn.toDateString()%></span><br><br><br><br>
+        
+         <form id="delete" action="/myOrders/<%= order.id %>?_method=DELETE" method="POST">
+       <button class="ui inverted red button" style="color:red;
+                       border:solid 2px red;
+                       padding:11px;">Delete</button>
+     </form>
+        
+  
+        
+       <%orders.some(function(EachOrder){%>
+        
+        <%if(EachOrder._id.toString() !== order.id.toString()){%>
+        
+       
+        
+         <%}else{%> 
+        <a href="/order/<%=order.id%>"  style="font-family: 'Nunito', sans-serif;
+                    font-size:14px;
+                    background-color:black;
+                    padding:15px;
+                    color:white;"><i style="font-size:20px;" class="fa fa-file-text" aria-hidden="true"></i>  See more </a>
+        
+        <%}%>
+        <%})%>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </p>
+    </div>
+    
+    
+    
+        <div class="col col-lg-3 col-sm-12 col-xs-12">
+      <p>
+        
+      </p>
+    </div>
+    
+  
+    
+     </div>
+         
+         
+       </div>
+     </div>
+    </div>
+    
 <%})%>
+    
+    </div>
+
+      </div>
+</div>
+
+
+
+
+
 

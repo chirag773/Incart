@@ -5,6 +5,10 @@ var UserSchema = new mongoose.Schema({
   username: String,
   password:String,
   
+  ProductName:String,
+ProductPrice :Number,
+ProductImage:String,
+  
 Orders:[{
 id:{
 type : mongoose.Schema.Types.ObjectId,
@@ -16,9 +20,11 @@ ref : "Order"
 // Price:Number,
 // ProductSize:Number,
 // ProductQuantity:{type:Number,default:0},
-  ProductName:String,
+// ShippingAddress:String,
+   ProductName:String,
 ProductPrice :Number,
 ProductImage:String,
+  
 ProductQuantity:{type:Number,default:1},
   ProductSize:String,
 AreaPincode:Number,
